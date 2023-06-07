@@ -1,0 +1,71 @@
+/* what are the parts of an http request?
+
+* Verb! Method! GET, POST, PUT, PATCH DELETE...
+
+* Path
+*Headers
+*   key-value pairs
+*   auth tokens
+*   content-type
+* Query Parameters
+*   key-value pairs
+*   (Depends on the API)
+*   Search Items
+*   (optional)
+
+
+
+
+* Pull up Task List API
+* ...
+* In one route, we make an HTTP request to the Slack API
+* What is that HTTP requests ...
+
+* Verb! Method! GET, POST, PUT, PATCH DELETE...
+*   
+* Path  
+*  in goal_routes.py --  https://slack.com/api/chat.postMessage
+* Headers
+*   from .env Auth: Bearer ZWxRH9ybKShS9I6mxwe2QMGy
+*   Content-Type: application/json
+* Query Parameters
+*   [None]
+*   Request Body
+* Request Body
+*   channel: task-notification
+* text: Hello, world!
+
+* Now copy this code:
+*   package.json (code below)
+
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.1.4"
+  }
+}
+
+*   index.js (code below)
+
+const axios = require('axios');
+require('dotenv').config();
+
+*   .env
+
+* Run "yarn install"
+*   observe the new yarn.lock file. This is auto generated! Happens a lot 
+helps managers go faster If deleted/non-exisitent, yarn install should mak
+again
+*
+
+* Use axios to make a post request
+* *Mind the syntax on the request body and the headers
+* Just print out "response.data" in the "then"
+* Just print out "error.response.data" in the "catch"
+
+* Goal: Work thru the commas, braces etc
+* 
